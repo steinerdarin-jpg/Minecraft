@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixelcraft // Blockwelt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">▦</span><span>PIXELCRAFT</span><span class="brand-sub">BLOCKWELT 01</span></div>
+      <div class="top-actions"><span class="status-dot"></span><span>LOKALER SPIELSTAND</span><button class="icon-button" id="resetWorld" title="Welt zurücksetzen">↻</button></div>
+    </header>
+
+    <main class="workspace">
+      <section class="world-column">
+        <div class="world-heading">
+          <div><p class="eyebrow">SURVIVAL / TAG 01</p><h1>Deine kleine Welt</h1></div>
+          <div class="coordinates"><span class="coord-label">POSITION</span><strong id="coordinates">X 08 · Y 04 · Z 12</strong></div>
+        </div>
+        <div class="game-frame">
+          <div class="frame-ruler ruler-top"><span>00</span><span>08</span><span>16</span><span>24</span><span>32</span></div>
+          <div class="frame-ruler ruler-left"><span>00</span><span>08</span><span>16</span><span>24</span></div>
+          <canvas id="worldCanvas" aria-label="Interaktive Pixelwelt"></canvas>
+          <div class="crosshair" aria-hidden="true"><i></i><i></i></div>
+          <div class="canvas-hint">A/D ODER PFEILE: LAUFEN <span>·</span> W / LEERTASTE: SPRINGEN</div>
+        </div>
+        <div class="world-footer"><span><b class="live-dot"></b> WELT GESPEICHERT</span><span>32 × 24 BLÖCKE</span><span id="blockCount">192 BLÖCKE</span></div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="panel-heading"><div><p class="eyebrow">INVENTAR</p><h2>Werkzeugkiste</h2></div><span class="inventory-count">09 / 36</span></div>
+        <div class="inventory-grid" id="inventoryGrid"></div>
+        <div class="selected-card"><div class="selected-preview" id="selectedPreview"></div><div><span class="eyebrow">AUSGEWÄHLT</span><strong id="selectedName">Moosgras</strong><small id="selectedDetail">Natürlich · Stapel 64</small></div><span class="keycap">1</span></div>
+        <div class="separator"></div>
+        <div class="guide"><p class="eyebrow">SCHNELLSTART</p><div class="guide-row"><span class="mouse-icon">⌁</span><span><b>Linksklick</b><small>Block abbauen</small></span></div><div class="guide-row"><span class="mouse-icon">⌁</span><span><b>Rechtsklick</b><small>Block setzen</small></span></div><div class="guide-row"><span class="keycap">1–6</span><span><b>Material wählen</b><small>Hotbar wechseln</small></span></div></div>
+        <div class="sidebar-footer"><span>BUILD 0.4.2</span><span class="seed">SEED: 482 016</span></div>
+      </aside>
+    </main>
+
+    <footer class="hotbar-wrap"><div class="hotbar-label">HOTBAR</div><div class="hotbar" id="hotbar"></div><div class="weather"><span class="sun">☼</span><span>KLAR<br><b>18°C</b></span></div></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
